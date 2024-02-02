@@ -8456,7 +8456,7 @@ dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="7.)-If-they-company-loses-an-employee,-there-is-a-cost-to-train-a-new-employee-for-a-role-~2.8-*-their-monthly-income.">7.) If they company loses an employee, there is a cost to train a new employee for a role ~2.8 * their monthly income.<a class="anchor-link" href="#7.)-If-they-company-loses-an-employee,-there-is-a-cost-to-train-a-new-employee-for-a-role-~2.8-*-their-monthly-income.">¶</a></h4><h3 id="To-make-someone-not-work-overtime-costs-the-company-2K-per-person.">To make someone not work overtime costs the company 2K per person.<a class="anchor-link" href="#To-make-someone-not-work-overtime-costs-the-company-2K-per-person.">¶</a></h3><h3 id="Is-it-profitable-for-the-company-to-remove-overtime?-If-so/not-by-how-much?">Is it profitable for the company to remove overtime? If so/not by how much?<a class="anchor-link" href="#Is-it-profitable-for-the-company-to-remove-overtime?-If-so/not-by-how-much?">¶</a></h3><h3 id="What-do-you-suggest-to-maximize-company-profits?">What do you suggest to maximize company profits?<a class="anchor-link" href="#What-do-you-suggest-to-maximize-company-profits?">¶</a></h3>
+<h3 id="7.)-If-they-company-loses-an-employee,-there-is-a-cost-to-train-a-new-employee-for-a-role-~2.8-*-their-monthly-income.">7.) If they company loses an employee, there is a cost to train a new employee for a role ~2.8 * their monthly income.<a class="anchor-link" href="#7.)-If-they-company-loses-an-employee,-there-is-a-cost-to-train-a-new-employee-for-a-role-~2.8-*-their-monthly-income.">¶</a></h3><h3 id="To-make-someone-not-work-overtime-costs-the-company-2K-per-person.">To make someone not work overtime costs the company 2K per person.<a class="anchor-link" href="#To-make-someone-not-work-overtime-costs-the-company-2K-per-person.">¶</a></h3><h3 id="Is-it-profitable-for-the-company-to-remove-overtime?-If-so/not-by-how-much?">Is it profitable for the company to remove overtime? If so/not by how much?<a class="anchor-link" href="#Is-it-profitable-for-the-company-to-remove-overtime?-If-so/not-by-how-much?">¶</a></h3><h3 id="What-do-you-suggest-to-maximize-company-profits?">What do you suggest to maximize company profits?<a class="anchor-link" href="#What-do-you-suggest-to-maximize-company-profits?">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8782,7 +8782,42 @@ dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The analysis of results from a decision tree model necessitates caution, as it is not a structural model. Unlike structural models that elucidate causal relationships between variables through theoretical underpinnings, decision trees are descriptive, focusing on pattern recognition without inferring causality. They segment data into homogeneous groups for predictions, not accommodating the analysis of how changes in one variable might causally affect another due to their data-driven nature. This limitation is crucial when considering the impact of interventions, such as a wage increase, where understanding the causal interplay among variables is essential. Thus, while decision trees can capture complex relationships and interactions, they do not provide insights into the causal mechanisms underlying these relationships, making them less suitable for exercises that require an understanding of the structural or causal impacts of variable changes.</p>
+<div style="background-color: #ffcc00; border-left: 6px solid #ffeb3b; padding: 10px; margin: 10px 0; font-family: Arial, sans-serif; color: #333;">
+<p>Considerations Regarding the Counterfactual Exercise</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=681b8763">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Prediction models such as decision trees are based on the assumption that the data generating process (joint probability distribution) is preserved throughout the sampling, and that the relationships between variables do not change when forecasting.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5cbff042">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Artificially changing a feature in the training sample without considering how this change would affect the other variables can lead to results that do not reflect reality, because it violates the assumption of stationarity of the data generating process.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6b73e235">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Unlike forecasting models such as decision trees, causality models like simultaneous equation models or structural equation models (SEM) impose restrictions on the covariance matrix of the variables, in order to isolate the effect of pure innovations or shocks on one variable on the others. Decision tree models do not impose restrictions on the covariance matrix of the variables, so it is not possible to isolate the effect of a change in one variable on the others.</p>
 </div>
 </div>
 </div>

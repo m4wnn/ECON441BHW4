@@ -260,7 +260,7 @@ f'Expected difference in attrition: {expected_diff}'
 Considering the training scenario, if all employees work overtime, an increase of 141 employees leaving the company is expected.
 """
 # %% [markdown]
-# #### 7.) If they company loses an employee, there is a cost to train a new employee for a role ~2.8 * their monthly income.
+# ### 7.) If they company loses an employee, there is a cost to train a new employee for a role ~2.8 * their monthly income.
 # ### To make someone not work overtime costs the company 2K per person.
 # ### Is it profitable for the company to remove overtime? If so/not by how much? 
 # ### What do you suggest to maximize company profits?
@@ -426,5 +426,19 @@ The exercise was conducted under the assumption that salary increases or decreas
 """
 # %% [markdown]
 """
-The analysis of results from a decision tree model necessitates caution, as it is not a structural model. Unlike structural models that elucidate causal relationships between variables through theoretical underpinnings, decision trees are descriptive, focusing on pattern recognition without inferring causality. They segment data into homogeneous groups for predictions, not accommodating the analysis of how changes in one variable might causally affect another due to their data-driven nature. This limitation is crucial when considering the impact of interventions, such as a wage increase, where understanding the causal interplay among variables is essential. Thus, while decision trees can capture complex relationships and interactions, they do not provide insights into the causal mechanisms underlying these relationships, making them less suitable for exercises that require an understanding of the structural or causal impacts of variable changes.
+<div style="background-color: #ffcc00; border-left: 6px solid #ffeb3b; padding: 10px; margin: 10px 0; font-family: Arial, sans-serif; color: #333;">
+  <p>Considerations Regarding the Counterfactual Exercise</p>
+</div>
+"""
+# %% [markdown]
+"""
+Prediction models such as decision trees are based on the assumption that the data generating process (joint probability distribution) is preserved throughout the sampling, and that the relationships between variables do not change when forecasting.
+"""
+# %% [markdown]
+"""
+Artificially changing a feature in the training sample without considering how this change would affect the other variables can lead to results that do not reflect reality, because it violates the assumption of stationarity of the data generating process.
+"""
+# %% [markdown]
+"""
+Unlike forecasting models such as decision trees, causality models like simultaneous equation models or structural equation models (SEM) impose restrictions on the covariance matrix of the variables, in order to isolate the effect of pure innovations or shocks on one variable on the others. Decision tree models do not impose restrictions on the covariance matrix of the variables, so it is not possible to isolate the effect of a change in one variable on the others.
 """
